@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: aether-automation-engine
+  description: "Legacy media automation platform - Status: Abandoned"
+  annotations:
+    github.com/project-slug: aashiruu/Aether-project
+spec:
+  type: service
+  lifecycle: experimental
+  owner: okikiola-ashiru
