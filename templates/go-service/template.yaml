@@ -19,8 +19,7 @@ spec:
           title: Description
           type: string
 
-  steps:
-    - id: fetch-base
+  - id: fetch-base
       name: Fetching Skeleton
       action: fetch:template
       input:
