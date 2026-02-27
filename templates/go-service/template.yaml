@@ -5,7 +5,7 @@ metadata:
   title: Cloud-Ready Go Service
   description: Scaffolds a Go service with Docker & GitHub Actions
 spec:
-  owner: okikiola-ashiru
+  owner: user:guest
   type: service
 
   parameters:
