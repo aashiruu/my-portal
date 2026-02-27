@@ -40,5 +40,4 @@ spec:
       name: Registering in Catalog
       action: catalog:register
       input:
-        repoContentsUrl: ${{ steps['publish'].output.remoteUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
+        repoContentsUrl: https://github.com/aashiruu/${{ parameters.name }}/blob/main/catalog-info.yaml
