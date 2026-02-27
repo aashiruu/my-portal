@@ -1,0 +1,32 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: go-service-template
+  title: Cloud-Ready Go Service
+  description: Scaffolds a Go service with Docker & GitHub Actions
+spec:
+  owner: okikiola-ashiru
+  type: service
+  parameters:
+    - title: Service Details
+      required: [name]
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name for the new GitHub repository
+  steps:
+    - id: fetch-base
+      name: Fetching Skeleton
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          name: ${{ parameters.name }}
+    - id: publish
+      name: Publishing to GitHub
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.name }}
+        repoUrl: github.com?owner=aashiruu&repo=${{ parameters.name }}
