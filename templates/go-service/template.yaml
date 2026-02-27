@@ -10,12 +10,14 @@ spec:
 
   parameters:
     - title: Service Details
-      required: [name]
+      required: [name, description]
       properties:
         name:
           title: Name
           type: string
-          description: Unique name for the new GitHub repository
+        description:
+          title: Description
+          type: string
 
   steps:
     - id: fetch-base
@@ -25,6 +27,7 @@ spec:
         url: ./skeleton
         values:
           name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
 
     - id: publish
       name: Publishing to GitHub

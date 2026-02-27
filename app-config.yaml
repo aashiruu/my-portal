@@ -48,19 +48,12 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location, Template, User, Group]
   locations:
-    - type: file
-      target: ./catalog-info.yaml
-
-    - type: file
-      target: ./aether-info.yaml
-
-    - type: file
-      target: ./templates/go-service/template.yaml
+    - type: url
+      target: https://github.com/aashiruu/my-portal/blob/main/templates/go-service/template.yaml
       rules:
         - allow: [Template]
 
     - type: file
       target: ../../examples/entities.yaml
-
 permission:
   enabled: false
