@@ -7,6 +7,7 @@ metadata:
 spec:
   owner: okikiola-ashiru
   type: service
+
   parameters:
     - title: Service Details
       required: [name]
@@ -15,6 +16,7 @@ spec:
           title: Name
           type: string
           description: Unique name for the new GitHub repository
+
   steps:
     - id: fetch-base
       name: Fetching Skeleton
@@ -23,10 +25,17 @@ spec:
         url: ./skeleton
         values:
           name: ${{ parameters.name }}
+
     - id: publish
       name: Publishing to GitHub
       action: publish:github
       input:
-        allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: github.com?owner=aashiruu&repo=${{ parameters.name }}
+
+    - id: register
+      name: Registering in Catalog
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.remoteUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
