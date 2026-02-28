@@ -41,7 +41,7 @@ spec:
       name: Registering in Catalog
       action: catalog:register
       input:
-        repoContentsUrl: https://github.com/aashiruu/${{ parameters.name }}/blob/main/catalog-info.yamlapiVersion: scaffolder.backstage.io/v1beta3
+        repoContentsUrl: "https://github.com/aashiruu/${{ parameters.name }}/blob/main/catalog-info.yaml"
 kind: Template
 metadata:
   name: go-service-template
