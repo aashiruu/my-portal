@@ -33,55 +33,11 @@ spec:
       name: Publishing to GitHub
       action: publish:github
       input:
-        allowedHosts: ['github.com']
         description: ${{ parameters.description }}
-        repoUrl: github.com?owner=aashiruu&repo=${{ parameters.name }}
+        repoUrl: "github.com?owner=aashiruu&repo=${{ parameters.name }}"
 
     - id: register
       name: Registering in Catalog
       action: catalog:register
       input:
         repoContentsUrl: "https://github.com/aashiruu/${{ parameters.name }}/blob/main/catalog-info.yaml"
-kind: Template
-metadata:
-  name: go-service-template
-  title: Cloud-Ready Go Service
-  description: Scaffolds a Go service with Docker & GitHub Actions
-spec:
-  owner: user:guest
-  type: service
-
-  parameters:
-    - title: Service Details
-      required: [name, description]
-      properties:
-        name:
-          title: Name
-          type: string
-        description:
-          title: Description
-          type: string
-
-  steps:
-    - id: fetch-base
-      name: Fetching Skeleton
-      action: fetch:template
-      input:
-        url: ./skeleton
-        values:
-          name: ${{ parameters.name }}
-          description: ${{ parameters.description }}
-
-    - id: publish
-      name: Publishing to GitHub
-      action: publish:github
-      input:
-        allowedHosts: ['github.com']
-        description: ${{ parameters.description }}
-        repoUrl: github.com?owner=aashiruu&repo=${{ parameters.name }}
-
-    - id: register
-      name: Registering in Catalog
-      action: catalog:register
-      input:
-        repoContentsUrl: https://github.com/aashiruu/${{ parameters.name }}/blob/main/catalog-info.yaml
