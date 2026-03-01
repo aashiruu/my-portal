@@ -5,6 +5,7 @@ metadata:
   description: ${{ values.description | dump }}
   annotations:
     github.com/project-slug: aashiruu/${{ values.name }}
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:guest
