@@ -48,15 +48,18 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location, Template, User, Group]
   locations:
-    - type: url
-      target: https://github.com/aashiruu/my-portal/blob/main/templates/go-service/template.yaml
+    - type: file
+      target: /home/famous/my-portal/templates/go-service/template.yaml
       rules:
         - allow: [Template]
 
     - type: file
-      target: ../../examples/entities.yaml
+      target: /home/famous/my-portal/examples/guest-user.yaml
 
     - type: file
-      target: ../../examples/guest-user.yaml
+      target: ./examples/entities.yaml
+
+    - type: file
+      target: ./examples/guest-user.yaml
 permission:
   enabled: false
