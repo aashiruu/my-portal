@@ -24,7 +24,7 @@ spec:
       name: Fetching Skeleton
       action: fetch:template
       input:
-        url: ./skeleton
+        url: ./skeleton/
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
