@@ -33,7 +33,6 @@ spec:
       name: Publishing to GitHub
       action: publish:github
       input:
-        allowedHosts: ['github.com']
         description: ${{ parameters.description }}
         repoUrl: "github.com?owner=aashiruu&repo=${{ parameters.name }}"
 
