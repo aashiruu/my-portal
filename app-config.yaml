@@ -24,6 +24,12 @@ backend:
       user: postgres
       password: backstage
 
+    knexConfig:
+      acquireConnectionTimeout: 60000
+      pool:
+        min: 2
+        max: 10
+
 integrations:
   github:
     - host: github.com
@@ -32,14 +38,19 @@ integrations:
 techdocs:
   builder: 'local'
   generator:
-    runIn: 'docker'
+    runIn: 'local'
   publisher:
     type: 'local'
 
 auth:
+  environment: development
   providers:
     guest:
       dangerouslyAllowAllRequests: true
+    github:
+      development:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
 
 catalog:
   import:
@@ -57,9 +68,7 @@ catalog:
       target: /home/famous/my-portal/examples/guest-user.yaml
 
     - type: file
-      target: ./examples/entities.yaml
+      target: /home/famous/my-portal/examples/entities.yaml
 
-    - type: file
-      target: ./examples/guest-user.yaml
 permission:
   enabled: false

@@ -33,6 +33,7 @@ spec:
       name: Publishing to GitHub
       action: publish:github
       input:
+        allowedHosts: ['github.com']
         description: ${{ parameters.description }}
         repoUrl: "github.com?owner=aashiruu&repo=${{ parameters.name }}"
 
@@ -40,4 +41,13 @@ spec:
       name: Registering in Catalog
       action: catalog:register
       input:
-        repoContentsUrl: "https://github.com/aashiruu/${{ parameters.name }}/blob/main/catalog-info.yaml"
+        repoContentsUrl: ${{ steps['publish'].output.remoteUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in Catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}

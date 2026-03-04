@@ -5,3 +5,5 @@ metadata:
 spec:
   profile:
     displayName: Guest User
+  memberOf: []
+

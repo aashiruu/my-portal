@@ -54,3 +54,8 @@ e2e-test-report/
 
 # Cache
 .cache/
+# Secrets and local config
+app-config.local.yaml
+*.log
+node_modules/
+site/
