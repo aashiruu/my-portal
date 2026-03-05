@@ -72,3 +72,13 @@ Local TechDocs Generation: Successfully bypassed common Docker-in-Docker issues 
 Custom Entity Pages: Modified EntityPage.tsx to include conditional CI/CD tabs and Kubernetes observability.
 
 Database Resilience: Resolved KnexTimeoutErrors by tuning connection pool parameters for high-latency environments.
+
+<img width="1315" height="596" alt="image" src="https://github.com/user-attachments/assets/75aab3e7-96b7-4e89-a63e-df71e0fda62c" />
+
+<img width="971" height="561" alt="image" src="https://github.com/user-attachments/assets/15b0585f-1a09-4747-b0b3-ccc290785009" />
+
+<img width="1090" height="454" alt="image" src="https://github.com/user-attachments/assets/8d1ba4c4-136d-4c20-a518-4ef9286eb1fa" />
+
+<img width="1119" height="661" alt="image" src="https://github.com/user-attachments/assets/b04c9a10-5e56-4bab-a7db-d14fcea0efe1" />
+
+<img width="1344" height="672" alt="image" src="https://github.com/user-attachments/assets/83d0d2b2-2d9a-497e-bae4-0d768da3f8d2" />
